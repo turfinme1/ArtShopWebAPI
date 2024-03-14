@@ -3,9 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34408.163
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArtShopApp.Server", "ArtShopApp.Server\ArtShopApp.Server.csproj", "{6EDBDFAA-4F1D-4A2C-B0FC-9B23D8B3F243}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArtShopApp.Server", "ArtShopApp.Server\ArtShopApp.Server.csproj", "{6EDBDFAA-4F1D-4A2C-B0FC-9B23D8B3F243}"
 EndProject
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "artshopapp.client", "artshopapp.client\artshopapp.client.esproj", "{3229CE6A-BE7B-49E8-9570-AAA6C35766E2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{5477F79A-BF5C-4ACD-9829-AEA27D6257E0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{9AC99843-A500-4AAE-912D-C45AC6881699}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArtShop.Data", "ArtShop.Data\ArtShop.Data.csproj", "{AE6DB87B-274C-4630-85B9-EC61534E1968}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArtShop.Data.Common", "ArtShop.Common\ArtShop.Data.Common.csproj", "{10A2BB5F-CE32-4EA6-B499-AC28ACA5AF65}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArtShop.Data.Models", "ArtShop.Data.Models\ArtShop.Data.Models.csproj", "{B918D745-9A39-4070-80E0-CF81A0044EB4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,9 +33,26 @@ Global
 		{3229CE6A-BE7B-49E8-9570-AAA6C35766E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3229CE6A-BE7B-49E8-9570-AAA6C35766E2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3229CE6A-BE7B-49E8-9570-AAA6C35766E2}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{AE6DB87B-274C-4630-85B9-EC61534E1968}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE6DB87B-274C-4630-85B9-EC61534E1968}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE6DB87B-274C-4630-85B9-EC61534E1968}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE6DB87B-274C-4630-85B9-EC61534E1968}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10A2BB5F-CE32-4EA6-B499-AC28ACA5AF65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10A2BB5F-CE32-4EA6-B499-AC28ACA5AF65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10A2BB5F-CE32-4EA6-B499-AC28ACA5AF65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10A2BB5F-CE32-4EA6-B499-AC28ACA5AF65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B918D745-9A39-4070-80E0-CF81A0044EB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B918D745-9A39-4070-80E0-CF81A0044EB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B918D745-9A39-4070-80E0-CF81A0044EB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B918D745-9A39-4070-80E0-CF81A0044EB4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AE6DB87B-274C-4630-85B9-EC61534E1968} = {5477F79A-BF5C-4ACD-9829-AEA27D6257E0}
+		{10A2BB5F-CE32-4EA6-B499-AC28ACA5AF65} = {5477F79A-BF5C-4ACD-9829-AEA27D6257E0}
+		{B918D745-9A39-4070-80E0-CF81A0044EB4} = {5477F79A-BF5C-4ACD-9829-AEA27D6257E0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AC0FC7FE-F049-48D3-8338-58E805A92461}
