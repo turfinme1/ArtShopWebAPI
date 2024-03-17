@@ -1,4 +1,7 @@
-﻿namespace ArtShopApp.Server.Extensions
+﻿using ArtShop.Data.Common.Repositories;
+using ArtShop.Data.Repositories;
+
+namespace ArtShopApp.Server.Extensions
 {
     public static class ServiceExtensions
     {
@@ -23,6 +26,11 @@
                 options.IncludeSubDomains = true;
                 options.MaxAge = TimeSpan.FromDays(60);
             });
+        }
+
+        public static void ConfigureRepositoryManager(this IServiceCollection services)
+        {
+            services.AddScoped<IRepositoryManager, RepositoryManager>();
         }
     }
 }
