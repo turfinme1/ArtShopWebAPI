@@ -24,6 +24,7 @@ builder.Services.ConfigureCors();
 builder.Services.ConfigureHsts();
 
 builder.Services.ConfigureRepositoryManager();
+builder.Services.ConfigureServiceManager();
 
 builder.Services.AddControllers();
 

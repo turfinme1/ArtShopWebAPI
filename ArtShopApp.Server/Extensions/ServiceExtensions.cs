@@ -1,5 +1,7 @@
 ﻿using ArtShop.Data.Common.Repositories;
 using ArtShop.Data.Repositories;
+using ArtShop.Services.Common.Contracts;
+using ArtShop.Services.ServiceManager;
 
 namespace ArtShopApp.Server.Extensions
 {
@@ -31,6 +33,11 @@ namespace ArtShopApp.Server.Extensions
         public static void ConfigureRepositoryManager(this IServiceCollection services)
         {
             services.AddScoped<IRepositoryManager, RepositoryManager>();
+        }
+
+        public static void ConfigureServiceManager(this IServiceCollection services)
+        {
+            services.AddScoped<IServiceManager, ServiceManager>();
         }
     }
 }

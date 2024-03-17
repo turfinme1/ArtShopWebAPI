@@ -6,9 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\ArtShop.Data\ArtShop.Data.csproj" />
-    <ProjectReference Include="..\ArtShop.Services.Common\ArtShop.Services.Common.csproj" />
-  </ItemGroup>
-
 </Project>
