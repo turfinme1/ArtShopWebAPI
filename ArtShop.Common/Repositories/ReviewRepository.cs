@@ -1,7 +1,7 @@
-﻿using ArtShop.Data.Common.Repositories;
+﻿using ArtShop.Data.Common.Contracts;
 using ArtShop.Data.Models;
 
-namespace ArtShop.Data.Repositories
+namespace ArtShop.Data.Common.Repositories
 {
     public class ReviewRepository(ApplicationDbContext context) : RepositoryBase<Review>(context), IReviewRepository
     {

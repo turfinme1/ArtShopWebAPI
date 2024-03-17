@@ -1,4 +1,4 @@
-﻿namespace ArtShop.Data.Common.Constants
+﻿namespace ArtShop.Data.Models.Constants
 {
     public static class ValidationConstants
     {

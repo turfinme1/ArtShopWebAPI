@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace ArtShop.Data.Common.Models
+namespace ArtShop.Data.Models.BaseEntity
 {
     public abstract class BaseModel : IDeletableEntity, IAuditInfo
     {

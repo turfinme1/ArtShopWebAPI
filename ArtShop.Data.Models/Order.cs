@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using ArtShop.Data.Common.Models;
+using ArtShop.Data.Models.BaseEntity;
 
 namespace ArtShop.Data.Models
 {

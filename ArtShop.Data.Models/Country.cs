@@ -1,5 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using static ArtShop.Data.Common.Constants.ValidationConstants.CountryValidationConstants;
+using static ArtShop.Data.Models.Constants.ValidationConstants.CountryValidationConstants;
 
 namespace ArtShop.Data.Models
 {

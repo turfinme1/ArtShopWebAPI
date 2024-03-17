@@ -1,4 +1,4 @@
-﻿namespace ArtShop.Data.Common.Models
+﻿namespace ArtShop.Data.Models.BaseEntity
 {
     public interface IAuditInfo
     {

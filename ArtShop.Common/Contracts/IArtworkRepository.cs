@@ -1,8 +1,8 @@
 ﻿using ArtShop.Data.Models;
 
-namespace ArtShop.Services.Common.Contracts
+namespace ArtShop.Data.Common.Contracts
 {
-    public interface IArtworkService
+    public interface IArtworkRepository
     {
         Task<IEnumerable<Artwork>> GetAllArtworksAsync();
     }

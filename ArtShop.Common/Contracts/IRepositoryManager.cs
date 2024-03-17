@@ -1,4 +1,4 @@
-﻿namespace ArtShop.Data.Common.Repositories
+﻿namespace ArtShop.Data.Common.Contracts
 {
     public interface IRepositoryManager
     {

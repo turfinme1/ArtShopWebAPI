@@ -1,4 +1,4 @@
-﻿using ArtShop.Data.Common.Repositories;
+﻿using ArtShop.Data.Common.Contracts;
 using ArtShop.Services.Artwork;
 using ArtShop.Services.Common.Contracts;
 using ArtShop.Services.Review;

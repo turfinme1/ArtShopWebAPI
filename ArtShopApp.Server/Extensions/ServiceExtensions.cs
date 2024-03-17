@@ -1,5 +1,5 @@
-﻿using ArtShop.Data.Common.Repositories;
-using ArtShop.Data.Repositories;
+﻿using ArtShop.Data.Common.Contracts;
+using ArtShop.Data.Common.Repositories;
 using ArtShop.Services.Common.Contracts;
 using ArtShop.Services.ServiceManager;
 

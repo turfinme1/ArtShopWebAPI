@@ -1,6 +1,6 @@
-﻿using ArtShop.Data.Common.Repositories;
+﻿using ArtShop.Data.Common.Contracts;
 
-namespace ArtShop.Data.Repositories
+namespace ArtShop.Data.Common.Repositories
 {
     public class RepositoryManager(ApplicationDbContext context) : IRepositoryManager
     {

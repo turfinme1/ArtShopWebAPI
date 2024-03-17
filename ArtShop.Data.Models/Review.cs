@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using ArtShop.Data.Common.Models;
-using static ArtShop.Data.Common.Constants.ValidationConstants.ReviewValidationConstants;
+using ArtShop.Data.Models.BaseEntity;
+using static ArtShop.Data.Models.Constants.ValidationConstants.ReviewValidationConstants;
 
 namespace ArtShop.Data.Models
 {

@@ -1,7 +1,7 @@
-﻿using ArtShop.Data.Common.Repositories;
+﻿using ArtShop.Data.Common.Contracts;
 using Microsoft.EntityFrameworkCore;
 
-namespace ArtShop.Data.Repositories
+namespace ArtShop.Data.Common.Repositories
 {
     public abstract class RepositoryBase<TEntity>(ApplicationDbContext context) : IRepositoryBase<TEntity>
         where TEntity : class

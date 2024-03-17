@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using ArtShop.Data.Common.Models;
-using static ArtShop.Data.Common.Constants.ValidationConstants.AddressValidationConstants;
+using ArtShop.Data.Models.BaseEntity;
+using static ArtShop.Data.Models.Constants.ValidationConstants.AddressValidationConstants;
 
 namespace ArtShop.Data.Models
 {

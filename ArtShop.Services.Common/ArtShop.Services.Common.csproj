@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ArtShop.Data.Models\ArtShop.Data.Models.csproj" />
+  </ItemGroup>
+
 </Project>
