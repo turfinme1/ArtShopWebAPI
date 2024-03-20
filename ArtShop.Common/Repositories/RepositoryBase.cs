@@ -6,7 +6,6 @@ namespace ArtShop.Data.Common.Repositories
     public abstract class RepositoryBase<TEntity>(ApplicationDbContext context) : IRepositoryBase<TEntity>
         where TEntity : class
     {
-        private readonly ApplicationDbContext _context = context ?? throw new ArgumentNullException(nameof(context));
         private readonly DbSet<TEntity> _dbSet = context.Set<TEntity>();
 
         public IQueryable<TEntity> All()

@@ -25,7 +25,7 @@ namespace ArtShopApp.Server.Controllers
             {
                 return Ok(await service.ArtworkService.GetAllArtworksAsync());
             }
-            catch (Exception e)
+            catch
             {
                 return StatusCode(500, "Internal server error");
             }

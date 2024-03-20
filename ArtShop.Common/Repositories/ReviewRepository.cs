@@ -3,7 +3,7 @@ using ArtShop.Data.Models;
 
 namespace ArtShop.Data.Common.Repositories
 {
-    public class ReviewRepository(ApplicationDbContext context) : RepositoryBase<Review>(context), IReviewRepository
+    internal sealed class ReviewRepository(ApplicationDbContext context) : RepositoryBase<Review>(context), IReviewRepository
     {
     }
 }

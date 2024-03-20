@@ -21,7 +21,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{9E5BEB72-B0A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArtShop.Services", "ArtShop.Services\ArtShop.Services.csproj", "{618FC0E2-C233-4323-B7F0-F377F429AEAA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArtShop.Services.Common", "ArtShop.Services.Common\ArtShop.Services.Common.csproj", "{80FE9B33-310C-475C-83AA-73D8360B98EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArtShop.Services.Common", "ArtShop.Services.Common\ArtShop.Services.Common.csproj", "{80FE9B33-310C-475C-83AA-73D8360B98EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArtShop.DTO", "ArtShop.DataTransferObjects\ArtShop.DTO.csproj", "{DFD046C8-EA29-462F-86D1-082887421A86}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,6 +61,10 @@ Global
 		{80FE9B33-310C-475C-83AA-73D8360B98EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{80FE9B33-310C-475C-83AA-73D8360B98EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{80FE9B33-310C-475C-83AA-73D8360B98EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFD046C8-EA29-462F-86D1-082887421A86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFD046C8-EA29-462F-86D1-082887421A86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFD046C8-EA29-462F-86D1-082887421A86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFD046C8-EA29-462F-86D1-082887421A86}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -70,6 +76,7 @@ Global
 		{B918D745-9A39-4070-80E0-CF81A0044EB4} = {5477F79A-BF5C-4ACD-9829-AEA27D6257E0}
 		{618FC0E2-C233-4323-B7F0-F377F429AEAA} = {9AC99843-A500-4AAE-912D-C45AC6881699}
 		{80FE9B33-310C-475C-83AA-73D8360B98EF} = {9AC99843-A500-4AAE-912D-C45AC6881699}
+		{DFD046C8-EA29-462F-86D1-082887421A86} = {9AC99843-A500-4AAE-912D-C45AC6881699}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AC0FC7FE-F049-48D3-8338-58E805A92461}

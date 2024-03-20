@@ -11,12 +11,11 @@ namespace ArtShop.Services.Artwork
         {
             try
             {
-                var artworks = await repositoryManager.Artwork.GetAllArtworksAsync();
-                return artworks;
+                return await repositoryManager.Artwork.GetAllArtworksAsync();
             }
             catch (Exception e)
             {
-                logger.LogError(e, "Error");
+                logger.LogError(e, $"Error in {nameof(GetAllArtworksAsync)}");
                 throw;
             }
         }

@@ -2,7 +2,7 @@
 
 namespace ArtShop.Data.Common.Repositories
 {
-    public class RepositoryManager(ApplicationDbContext context) : IRepositoryManager
+    public sealed class RepositoryManager(ApplicationDbContext context) : IRepositoryManager
     {
         private readonly Lazy<IArtworkRepository> _artworkRepository = new Lazy<IArtworkRepository>(() => new ArtworkRepository(context));
         private readonly Lazy<IReviewRepository> _reviewRepository = new Lazy<IReviewRepository>(() => new ReviewRepository(context));
