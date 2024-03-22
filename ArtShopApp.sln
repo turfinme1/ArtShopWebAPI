@@ -23,7 +23,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArtShop.Services", "ArtShop
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArtShop.Services.Common", "ArtShop.Services.Common\ArtShop.Services.Common.csproj", "{80FE9B33-310C-475C-83AA-73D8360B98EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArtShop.DTO", "ArtShop.DataTransferObjects\ArtShop.DTO.csproj", "{DFD046C8-EA29-462F-86D1-082887421A86}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArtShop.Services.Models", "ArtShop.DataTransferObjects\ArtShop.Services.Models.csproj", "{DFD046C8-EA29-462F-86D1-082887421A86}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

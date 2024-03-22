@@ -23,7 +23,7 @@ namespace ArtShopApp.Server.Controllers
         {
             try
             {
-                return Ok(await service.ArtworkService.GetAllArtworksAsync());
+                return Ok(await service.ArtworkService.GetAllAsync());
             }
             catch
             {

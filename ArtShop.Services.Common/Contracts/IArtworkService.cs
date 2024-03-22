@@ -1,9 +1,19 @@
-﻿using ArtShop.Data.Models;
+﻿using ArtShop.Services.Models.Artwork;
 
 namespace ArtShop.Services.Common.Contracts
 {
     public interface IArtworkService
     {
-        Task<IEnumerable<Artwork>> GetAllArtworksAsync();
+        Task<IEnumerable<ArtworkDto>> GetAllAsync();
+
+        Task<ArtworkDto?> GetByIdAsync(int id);
+
+        Task<ArtworkFormDto?> GetByIdAsFormDtoAsync(int id);
+
+        Task AddAsync(ArtworkFormDto model);
+
+        Task UpdateAsync(ArtworkFormDto model);
+
+        Task DeleteAsync(int id);
     }
 }

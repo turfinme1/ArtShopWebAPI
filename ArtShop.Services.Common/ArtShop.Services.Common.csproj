@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ArtShop.Common\ArtShop.Data.Common.csproj" />
+    <ProjectReference Include="..\ArtShop.DataTransferObjects\ArtShop.Services.Models.csproj" />
   </ItemGroup>
 
 </Project>
