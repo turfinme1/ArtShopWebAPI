@@ -4,6 +4,16 @@ namespace ArtShop.Data.Common.Contracts
 {
     public interface IArtworkRepository
     {
-        Task<IEnumerable<Artwork>> GetAllArtworksAsync();
+        IQueryable<Artwork> GetAll();
+
+        IQueryable<Artwork> GetByIdAsync(int id);
+
+        Task<Artwork?> GetByIdAsFormDtoAsync(int id);
+
+        Task AddAsync(Artwork model);
+
+        Task UpdateAsync(Artwork model);
+
+        Task DeleteAsync(int id);
     }
 }
