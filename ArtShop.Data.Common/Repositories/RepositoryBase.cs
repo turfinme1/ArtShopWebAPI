@@ -14,8 +14,8 @@ namespace ArtShop.Data.Common.Repositories
         public IQueryable<TEntity> AllAsNoTracking()
             => _dbSet.AsNoTracking();
 
-        public Task CreateAsync(TEntity entity)
-            => _dbSet.AddAsync(entity).AsTask();
+        public async Task CreateAsync(TEntity entity)
+            => await _dbSet.AddAsync(entity);
 
         public void Update(TEntity entity)
             => _dbSet.Update(entity);

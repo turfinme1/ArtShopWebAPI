@@ -6,6 +6,8 @@
 
         IReviewRepository Review { get; }
 
+        ICategoryRepository Category { get; }
+
         Task<int> SaveChangesAsync();
     }
 }

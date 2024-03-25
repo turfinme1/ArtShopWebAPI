@@ -8,22 +8,26 @@ using Microsoft.EntityFrameworkCore;
 using ArtShop.Data;
 using ArtShop.Data.Models;
 using ArtShop.Services.Common.Contracts;
+using ArtShop.Services.Models.Artwork;
 using Microsoft.AspNetCore.Authorization;
 
 namespace ArtShopApp.Server.Controllers
 {
     [Route("api/artwork")]
     [ApiController]
-    public class ArtworkController(IServiceManager service) : BaseController
+    public class ArtworkController(IServiceManager serviceManager) : BaseController
     {
         // GET: api/Artwork
         [HttpGet]
         [AllowAnonymous]
-        public async Task<IActionResult> GetArtworks()
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<ActionResult<IEnumerable<ArtworkDto>>> GetArtworks()
         {
             try
             {
-                return Ok(await service.ArtworkService.GetAllAsync());
+                return Ok(await serviceManager.ArtworkService.GetAllAsync());
             }
             catch
             {
@@ -31,81 +35,98 @@ namespace ArtShopApp.Server.Controllers
             }
         }
 
-        //// GET: api/Artwork/5
-        //[HttpGet("{id}")]
-        //public async Task<ActionResult<Artwork>> GetArtwork(int id)
-        //{
-        //    var artwork = await _context.Artworks.FindAsync(id);
+        //// GET: api/Artwork/{id}
+        [HttpGet("{id}")]
+        [AllowAnonymous]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<ActionResult<ArtworkDto>> GetArtworkById(int id)
+        {
+            try
+            {
+                var artwork = await serviceManager.ArtworkService.GetByIdAsync(id);
 
-        //    if (artwork == null)
-        //    {
-        //        return NotFound();
-        //    }
+                if (artwork is null)
+                {
+                    return NotFound();
+                }
 
-        //    return artwork;
-        //}
+                return Ok(await serviceManager.ArtworkService.GetByIdAsync(id));
 
-        //// PUT: api/Artwork/5
-        //// To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        //[HttpPut("{id}")]
-        //public async Task<IActionResult> PutArtwork(int id, Artwork artwork)
-        //{
-        //    if (id != artwork.Id)
-        //    {
-        //        return BadRequest();
-        //    }
+            }
+            catch
+            {
+                return StatusCode(500, "Internal server error");
+            }
+        }
 
-        //    _context.Entry(artwork).State = EntityState.Modified;
+        //// PUT: api/Artwork/{id}
+        [HttpPut("{id}")]
+        [AllowAnonymous]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<ActionResult> PutArtwork(int id, ArtworkFormDto model)
+        {
+            if (id != model.Id)
+            {
+                return BadRequest();
+            }
 
-        //    try
-        //    {
-        //        await _context.SaveChangesAsync();
-        //    }
-        //    catch (DbUpdateConcurrencyException)
-        //    {
-        //        if (!ArtworkExists(id))
-        //        {
-        //            return NotFound();
-        //        }
-        //        else
-        //        {
-        //            throw;
-        //        }
-        //    }
+            try
+            {
+                await serviceManager.ArtworkService.UpdateAsync(model);
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                return StatusCode(500, "Internal server error");
+            }
 
-        //    return NoContent();
-        //}
+            return NoContent();
+        }
 
-        //// POST: api/Artwork
-        //// To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        //[HttpPost]
-        //public async Task<ActionResult<Artwork>> PostArtwork(Artwork artwork)
-        //{
-        //    _context.Artworks.Add(artwork);
-        //    await _context.SaveChangesAsync();
+        // POST: api/Artwork
+        [HttpPost]
+        [AllowAnonymous]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<ActionResult<ArtworkDto>> PostArtwork(ArtworkFormDto artwork)
+        {
+            try
+            {
+                int createdArtworkId = await serviceManager.ArtworkService.AddAsync(artwork);
 
-        //    return CreatedAtAction("GetArtwork", new { id = artwork.Id }, artwork);
-        //}
+                var createdArtwork = await serviceManager.ArtworkService.GetByIdAsync(createdArtworkId);
 
-        //// DELETE: api/Artwork/5
-        //[HttpDelete("{id}")]
-        //public async Task<IActionResult> DeleteArtwork(int id)
-        //{
-        //    var artwork = await _context.Artworks.FindAsync(id);
-        //    if (artwork == null)
-        //    {
-        //        return NotFound();
-        //    }
+                return CreatedAtAction("GetArtworkById", new { id = createdArtwork.Id }, createdArtwork);
+            }
+            catch
+            {
+                return StatusCode(500, "Internal server error");
+            }
+        }
 
-        //    _context.Artworks.Remove(artwork);
-        //    await _context.SaveChangesAsync();
+        // DELETE: api/Artwork/{id}
+        [HttpDelete("{id}")]
+        [AllowAnonymous]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<ActionResult> DeleteArtwork(int id)
+        {
+            try
+            {
+                await serviceManager.ArtworkService.DeleteAsync(id);
+            }
+            catch
+            {
+                return StatusCode(500, "Internal server error");
+            }
 
-        //    return NoContent();
-        //}
-
-        //private bool ArtworkExists(int id)
-        //{
-        //    return _context.Artworks.Any(e => e.Id == id);
-        //}
+            return Ok();
+        }
     }
 }

@@ -55,6 +55,8 @@ namespace ArtShop.Services.Models.Artwork
         [Required]
         public bool IsFramed { get; set; }
 
+        public string CreatorId { get; set; } = string.Empty;
+
         [Required]
         public int StyleId { get; set; }
 
@@ -65,6 +67,6 @@ namespace ArtShop.Services.Models.Artwork
 
         public IEnumerable<SubjectDto> Subjects { get; set; } = [];
 
-        public string CreatorId { get; set; } = string.Empty;
+        public IEnumerable<string> Categories = [];
     }
 }

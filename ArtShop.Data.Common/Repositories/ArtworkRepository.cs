@@ -1,5 +1,6 @@
 ﻿using ArtShop.Data.Common.Contracts;
 using ArtShop.Data.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace ArtShop.Data.Common.Repositories
 {
@@ -7,7 +8,7 @@ namespace ArtShop.Data.Common.Repositories
     {
         public IQueryable<Artwork> GetAll()
         {
-            return this.All();
+            return this.AllAsNoTracking();
         }
 
         public IQueryable<Artwork> GetByIdAsync(int id)
@@ -15,24 +16,29 @@ namespace ArtShop.Data.Common.Repositories
             return this.All().Where(a => a.Id == id);
         }
 
-        public async Task<Artwork?> GetByIdAsFormDtoAsync(int id)
+        public IQueryable<Artwork> GetByIdAsNoTrackingAsync(int id)
         {
-            throw new NotImplementedException();
+            return this.AllAsNoTracking().Where(a => a.Id == id);
         }
 
-        public async Task AddAsync(Artwork model)
+        public async Task AddAsync(Artwork entity)
         {
-            throw new NotImplementedException();
+            await this.CreateAsync(entity);
         }
 
-        public async Task UpdateAsync(Artwork model)
+        public void Update(Artwork entity)
         {
-            throw new NotImplementedException();
+            base.Update(entity);
         }
 
         public async Task DeleteAsync(int id)
         {
-            throw new NotImplementedException();
+            var entity = await GetByIdAsync(id).FirstOrDefaultAsync();
+
+            if (entity is not null)
+            {
+                this.Delete(entity);
+            }
         }
     }
 }

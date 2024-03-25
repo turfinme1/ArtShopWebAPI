@@ -8,11 +8,11 @@ namespace ArtShop.Data.Common.Contracts
 
         IQueryable<Artwork> GetByIdAsync(int id);
 
-        Task<Artwork?> GetByIdAsFormDtoAsync(int id);
+        IQueryable<Artwork> GetByIdAsNoTrackingAsync(int id);
 
-        Task AddAsync(Artwork model);
+        Task AddAsync(Artwork entity);
 
-        Task UpdateAsync(Artwork model);
+        void Update(Artwork entity);
 
         Task DeleteAsync(int id);
     }

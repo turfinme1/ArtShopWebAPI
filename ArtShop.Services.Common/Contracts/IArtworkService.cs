@@ -10,7 +10,7 @@ namespace ArtShop.Services.Common.Contracts
 
         Task<ArtworkFormDto?> GetByIdAsFormDtoAsync(int id);
 
-        Task AddAsync(ArtworkFormDto model);
+        Task<int> AddAsync(ArtworkFormDto model);
 
         Task UpdateAsync(ArtworkFormDto model);
 
